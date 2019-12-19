@@ -1,0 +1,56 @@
+.mv {
+  padding: 218px 0 164px;
+  background-image: url(../../dist/img/mv/bg01.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include sp() {
+    padding: 206px 0 167px;
+    background-position: 22% center;
+  }
+  
+  @media screen and (min-resolution: 2dppx) {
+    background-image: url(../../dist/img/mv/bg01@2x.png);
+  }
+
+  &-content {
+    margin-left: auto;
+    max-width: 540px;
+    width: 100%;
+
+    @include sp() {
+      margin-right: auto;
+    }
+  }
+
+  &-ttl {
+    @include fontsetting(30, 45, 0.02);
+    @include fontweight(bold);
+    margin-bottom: 35px;
+
+    @include sp() {
+      @include fontsetting(24, 38, 0.02);
+      margin-bottom: 40px;
+    }
+  }
+
+  &-txt {
+    @include fontsetting(18, 26, 0.45);
+    margin-bottom: 40px;
+
+    @include sp() {
+      @include fontsetting(16, 24.5, 0.4);
+    }
+  }
+
+  &-btn {
+    max-width: 280px;
+    width: 100%;
+
+    @include sp() {
+      max-width: 232px;
+      margin: 0 auto;
+    }
+  }
+}

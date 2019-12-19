@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* webフォント */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+@font-face {
+    font-family: 'Berlin Sans FB Demi Bold';
+    src: url('../../dist/font/BerlinSansFbDemi.woff') format('woff');
+}
+
+/* base */
+
+html {
+    font-size: 62.5%; //10px
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    @include fontweight(regular);
+    font-family: 'Montserrat', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif;
+    color: $c-main;
+    background-color: $c-sub;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.5s ease-in 0s;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include fontweight(light);
+}

@@ -1,0 +1,135 @@
+/* news */
+
+.news {
+  padding: 128px 0;
+  text-align: center;
+
+  @include sp() {
+    padding: 0 0 60px;
+  }
+
+  &-ttl {
+    margin-bottom: 60px;
+
+    @include sp() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-content {
+    padding: 60px 50px 40px;
+    box-shadow: 0px 5px 12px $c-light;
+
+    @include sp() {
+      padding: 40px 0;
+      margin-top: -40px;
+    }
+  }
+
+  &-list {
+    margin-bottom: 38px;
+  }
+
+  &-btn {
+    max-width: 248px;
+    margin: 0 auto;
+    width: 100%;
+    letter-spacing: 0.2em;
+
+    @include sp() {
+      max-width: none;
+    }
+
+    &-wrap {
+      margin: 0 16px;
+    }
+  }
+}
+
+.post {
+  position: relative;
+  text-align: left;
+  @include fontsetting(18, 0, 0.45, false);
+  border-top: 2px solid $c-border;
+
+  &:last-of-type {
+    border-bottom: 2px solid $c-border;
+  }
+
+  &-link {
+    padding: 39px 30px 39px 10px;
+    display: block;
+
+    @include sp() {
+      padding: 13px 47px 16px 16px;
+    }
+
+    &:hover {
+      background-color: lighten($c-primary, 30%);
+    }
+
+  }
+
+
+  &-content {
+    flex: 0 0 283px;
+    margin-right: 60px;
+    white-space: nowrap;
+
+    @include sp() {
+      margin: 0 0 10px 0;
+    }
+
+    &.flex {
+      @include sp() {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  &-time {
+    @include fontsetting(18, 22);
+    margin-right: 60px;
+
+    @include sp() {
+      @include fontsetting(14, 18, 0.35);
+      margin-right: 20px;
+    }
+  }
+
+  &-label {
+    @include fontsetting(14, 0, 0.35);
+    border: 2px solid $c-primary;
+    padding: 0 33px;
+    height: 28px;
+    line-height: 24px;
+    border-radius: 50px;
+    background-color: $c-white;
+
+    @include sp() {
+      @include fontsetting(12, 16, 0.3);
+      padding: 4px 20px;
+    }
+  }
+
+  &-txt {
+    @include fontsetting(18, 28, 0.45);
+    flex: 1 1 auto;
+
+    @include sp() {
+      @include fontsetting(14, 21.5, -0.35);
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+
+    @include sp() {
+      right: 10px;
+    }
+  }
+
+}

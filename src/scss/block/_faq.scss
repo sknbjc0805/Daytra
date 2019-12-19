@@ -1,0 +1,91 @@
+/* faq */
+
+.faq {
+  padding: 80px 0;
+  background: url(../../dist/img/faq/bg01.png) no-repeat left center;
+  background-size: cover;
+
+  @media screen and (min-resolution: 2dppx) {
+    background: url(../../dist/img/faq/bg01@2x.png) no-repeat left center;
+  }
+
+  @include sp() {
+    padding: 40px 0;
+  }
+
+  &-ttl {
+    text-align: center;
+    margin-bottom: 82px;
+
+    @include sp() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-content {
+    margin-left: auto;
+    max-width: 630px;
+    width: 100%;
+
+    @include sp() {
+      margin: 0 auto;
+    }
+  }
+}
+
+.qa {
+  padding: 22px 18px 18px;
+  border-radius: 7px;
+  transition: all 0.5s ease 0s;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include sp() {
+      margin-bottom: 30px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px $c-primary;
+    cursor: pointer;
+  }
+
+  &-q {
+    position: relative;
+    @include fontsetting(16, 26, 0.4, false);
+    @include fontweight(bold);
+
+    &::before {
+      content: "Q";
+      display: inline-block;
+      margin-right: 13px;
+      background-color: $c-primary;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      color: $c-white;
+      @include fontweight(semibold);
+    }
+
+    &-icon {
+      font-size: 3rem;
+      color: $c-primary;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-a {
+    display: none;
+    background-color: $c-accent;
+    border-radius: 7px;
+    margin-top: 18px;
+    padding: 18px 14px;
+    @include fontsetting(16, 24, 0, false);
+  }
+}

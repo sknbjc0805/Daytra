@@ -1,0 +1,24 @@
+// 色変数定義
+$c-main:      #3E3E3E;
+$c-sub:       #F3F3F3;
+$c-white:     #FFFFFF;
+$c-primary:   #3B69FF;
+$c-secondary: #FFAA3B;
+$c-tertiary:  #FF4646;
+$c-accent:    #D7E1FF;
+$c-light:     #707070;
+$c-dark:      #CFCFD4;
+$c-border:    #F0F0F0;
+$c-logo:      #E3E3E3;
+
+//ブレークポイント
+$w-breakpoint: 767;
+
+//最大幅
+$w-sm: 627px;
+$w-md: 960px;
+$w-lg: 1180px;
+
+//最大幅（inner）左右padding
+$w-padding-rl--pc: 5%;
+$w-padding-rl--sp: 16px;

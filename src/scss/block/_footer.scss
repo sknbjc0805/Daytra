@@ -1,0 +1,131 @@
+/* footer */
+
+.footer {
+  padding: 120px 0 100px;
+  color: $c-white;
+  background-color: $c-main;
+
+  @include sp() {
+    padding: 60px 0 92px;
+  }
+
+  &-inner {
+
+    &.flex {
+      justify-content: space-between;
+      align-items: flex-start;
+
+      @include sp() {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-right {
+    text-align: right;
+
+    @include sp() {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &-left {
+    @include sp() {
+      width: 100%;
+    }
+  }
+
+  &-logo {
+    font-family: 'Berlin Sans FB Demi Bold', sans-serif;
+    color: $c-logo;
+    @include fontsetting(44, 58);
+    margin: 43px 0 18px;
+
+    @include sp() {
+      @include fontsetting(34, 46, -2);
+      margin-bottom: 8px;
+    }
+  }
+
+  &-note {
+    @include fontsetting(12, 15, 0.3);
+  }
+}
+
+.sns {
+  font-size: 3.8rem;
+  margin-bottom: 40px;
+  opacity: .6;
+
+  @include sp() {
+    margin-bottom: 40px;
+    font-size: 6rem;
+  }
+
+  &-list {
+
+    &.flex {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &-item {
+    transition: all 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include sp() {
+        margin-right: 0;
+      }
+    }
+
+    @include sp() {
+      flex: 0 0 50%;
+      text-align: center;
+    }
+
+    &:hover {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+
+.fmenu {
+  @include sp() {
+    margin-bottom: 35px;
+  }
+
+  &-list {
+
+    &.flex {
+      @include pc() {
+        display: block;
+      }
+
+      @include sp() {
+        justify-content: center;
+      }
+    }
+  }
+
+  &-item {
+
+    @include sp() {
+      flex: 0 0 50%;
+      text-align: center;
+    }
+
+    margin-bottom: 20px;
+
+    a {
+      @include fontsetting(18, 23, 0.45);
+      @include fontweight(medium);
+
+      @include sp() {
+        @include fontsetting(14, 26, 0.35);
+      }
+    }
+  }
+}

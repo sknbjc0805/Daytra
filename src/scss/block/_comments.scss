@@ -1,0 +1,107 @@
+/* comments */
+
+.comments {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 72%;
+    height: 80%;
+    background-color: $c-main;
+    z-index: -1;
+
+    @include sp() {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-wrap {
+    padding-bottom: 130px;
+
+    @include sp() {
+      padding-bottom: 60px;
+    }
+
+    &.flex {
+      align-items: flex-start;
+
+      @include sp() {
+        display: block;
+      }
+    }
+  }
+
+  &-ttl {
+    margin-bottom: 80px;
+
+    @include sp() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-content {
+    padding: 80px 45px 125px 40px;
+    flex: 0 0 55%;
+
+    @include sp() {
+      padding: 40px 20px;
+      width: 100%;
+    }
+  }
+
+  &-img {
+    margin-top: 126px;
+    flex: 1 1 auto;
+
+    img {
+      width: 100%;
+    }
+
+    @include sp() {
+      display: none;
+    }
+  }
+}
+
+.comment {
+
+  &.flex {
+    align-items: flex-start;
+
+    @include sp() {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &:first-of-type {
+    margin-bottom: 80px;
+  }
+
+  &-img {
+    flex: 0 0 100px;
+    margin-right: 51px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include sp() {
+      flex: 0 0 56px;
+      margin-right: 24px;
+    }
+  }
+
+  &-txt {
+    flex: 1 1 auto;
+    @include fontsetting(16, 26);
+
+    @include sp() {
+      @include fontsetting(14, 21.5);
+    }
+  }
+}

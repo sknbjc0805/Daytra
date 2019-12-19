@@ -1,0 +1,86 @@
+/* drawer */
+
+//drawerライブラリをカスタマイズ
+
+.drawer-nav {
+  width: 80%;
+  height: 100%;
+  color: $c-main;
+  z-index: 9999; //TODO drawer-navを一番上のレイヤーにしたい
+}
+
+.drawer--right {
+
+  .drawer-nav {
+    right: -80%;
+    color: $c-main;
+  }
+
+  .drawer-hamburger {
+    right: 16px;
+  }
+
+  &.drawer-open {
+    .drawer-hamburger {
+      right: 80%;
+    }
+  }
+}
+
+.drawer-menu {
+  text-align: center;
+  padding: 30% 0;
+
+  a {
+    @include fontsetting(18, 22, -0.45);
+  }
+
+  &-item {
+    display: inline-block;
+    padding: 10px;
+
+    &:hover {
+      text-decoration: none;
+      color: $c-main;
+    }
+  }
+}
+
+.drawer-hamburger {
+  width: 2.6rem;
+
+  @mixin hamnurger-icon-common {
+    height: 4px;
+    background-color: $c-main;
+    border-radius: 4px;
+  }
+
+  &-icon {
+
+    @include hamnurger-icon-common;
+
+    &::before {
+      @include hamnurger-icon-common;
+      top: -8px;
+    }
+
+    &::after {
+      @include hamnurger-icon-common;
+      top: 8px;
+    }
+  }
+}
+
+.drawer-open .drawer-hamburger-icon {
+  &::before {
+    background-color: $c-white;
+  }
+
+  &::after {
+    background-color: $c-white;
+  }
+}
+
+.drawer-overlay {
+  background-color: rgba(62, 62, 62, .7);
+}

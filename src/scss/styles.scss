@@ -1,0 +1,21 @@
+// importファイル定義
+//block以下のファイルについては、cssへコンパイル出力する順番に記述
+//scssを追加した場合は必ずここに追記すること
+
+@import "_valuables.scss";
+@import "_mixin.scss";
+@import "_base.scss";
+@import "_components.scss";
+@import "block/_header.scss";
+@import "block/_drawer.scss";
+@import "block/_mv.scss";
+@import "block/_news.scss";
+@import "block/_service.scss";
+@import "block/_results.scss";
+@import "block/_swiper.scss";
+@import "block/_price.scss";
+@import "block/_comments.scss";
+@import "block/_faq.scss";
+@import "block/_access.scss";
+@import "block/_contact.scss";
+@import "block/_footer.scss";

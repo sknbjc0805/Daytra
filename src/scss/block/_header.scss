@@ -1,0 +1,62 @@
+/* header */
+
+$hmenu-padding: 49px;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: $c-dark;
+
+  @include sp() {
+    background-color: $c-white;
+  }
+
+  &-inner {
+    &.w-sm {
+      //hmenuのpadding-rightの長さ追加
+      max-width: calc(#{$w-sm} + #{$w-padding-rl--pc} * 2 + #{$hmenu-padding});
+    }
+  }
+
+  //スマホ表示の設定
+  &--sp {
+    display: none;
+    height: 68px;
+
+    @include sp() {
+      display: block;
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+}
+
+.hmenu {
+  padding-right: $hmenu-padding;
+
+  &-list {
+    height: 80px;
+  }
+
+  &-item {
+    a {
+      @include fontsetting(16, 19, -0.4, false);
+      @include fontweight(medium);
+    }
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  //スマホ表示は非表示
+  @include sp() {
+    display: none;
+  }
+}

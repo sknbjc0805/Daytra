@@ -1,0 +1,67 @@
+// mixinの定義
+
+//fontsize、line-height、letter-spacingの一括指定（引数の単位：px）
+// $flgでfont-sizeを設定するか選択
+@mixin fontsetting($fontsize:'', $lineheight:'', $letterspacing:'', $flg:true) {
+
+    @if type-of($fontsize)=='number'and $fontsize > 0 {
+
+        //$flgが初期値の場合はfont-sizeをセットする
+        @if $flg==true {
+            font-size: #{$fontsize / 10}rem;
+        }
+
+        @if type-of($lineheight)=='number'and $lineheight > 0 {
+            //少数第二位で切り捨て
+            line-height: floor(($lineheight / $fontsize) * 100) / 100;
+        }
+
+        @if type-of($letterspacing)=='number'and $letterspacing !=0 {
+            letter-spacing: #{$letterspacing / $fontsize}em;
+        }
+    }
+}
+
+// font-weight設定
+@mixin fontweight($size) {
+
+    @if $size==bold {
+        font-weight: 700;
+    }
+
+    @else if $size==semibold {
+        font-weight: 600;
+    }
+
+    @else if $size==medium {
+        font-weight: 500;
+    }
+
+    @else if $size==regular {
+        font-weight: 400;
+    }
+
+    @else if $size==light {
+        font-weight: 300;
+    }
+
+    @else {
+        //指定なしの場合はregular
+        font-weight: 400;
+    }
+}
+
+// メディアクエリ
+// スマホ
+@mixin sp {
+    @media (max-width: #{$w-breakpoint}px) {
+        @content;
+    }
+}
+
+// PC
+@mixin pc {
+    @media (min-width: #{$w-breakpoint + 1}px) {
+        @content;
+    }
+}

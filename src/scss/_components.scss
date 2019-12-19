@@ -1,0 +1,174 @@
+/* component */
+
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $w-padding-rl--pc;
+
+  @include sp() {
+    padding: 0 $w-padding-rl--sp;
+  }
+}
+
+/* 最大幅 */
+.w-sm {
+  max-width: calc(#{$w-sm} + #{$w-padding-rl--pc} * 2);
+}
+
+.w-md {
+  max-width: calc(#{$w-md} + #{$w-padding-rl--pc} * 2);
+}
+
+.w-lg {
+  max-width: calc(#{$w-lg} + #{$w-padding-rl--pc} * 2);
+}
+
+/* タイトル */
+.ttl {
+  &--lg {
+    @include fontsetting(36, 44);
+    @include fontweight(semibold);
+
+    @include sp() {
+      @include fontsetting(30, 37);
+    }
+  }
+}
+
+/* テキスト全般 */
+.txt {
+  &--white {
+    color: $c-white;
+  }
+}
+
+/* 背景色 */
+.bg {
+  &--main {
+    background-color: $c-main;
+  }
+
+  &--white {
+    background-color: $c-white;
+  }
+
+  &--accent {
+    background-color: $c-accent;
+  }
+
+  &--secondary {
+    background-color: $c-secondary;
+  }
+
+  &--light {
+    background-color: $c-light;
+  }
+
+  &--dark {
+    background-color: $c-dark;
+  }
+}
+
+/* ボタン */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--sm {
+    @include fontsetting(18, 23, 0.45);
+    @include fontweight(bold);
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 12px $c-light;
+
+    @include sp() {
+      padding: 13px;
+    }
+  }
+
+  &--lg {
+    @include fontsetting(20, 22.5, 4);
+    @include fontweight(semibold);
+    padding: 20px;
+
+    @include sp() {
+      @include fontsetting(18, 22, 3.6);
+      padding: 15px;
+    }
+  }
+
+  &--white {
+    background-color: $c-white;
+    border: 1px solid $c-light;
+    color: $c-main;
+
+    &:hover {
+      background-color: $c-main;
+      color: $c-white;
+    }
+  }
+
+  &--dark {
+    background-color: $c-main;
+    border: 1px solid $c-white;
+    color: $c-white;
+
+    &:hover {
+      background-color: $c-white;
+      color: $c-main;
+    }
+  }
+
+  &--secondary {
+    background-color: $c-secondary;
+
+    &:hover {
+      background-color: darken($c-secondary, 20%);
+    }
+  }
+}
+
+/* メニュー */
+.underline {
+
+  &::after {
+    border-bottom: 1px solid $c-main;
+    content: '';
+    display: block;
+    margin: 6px auto 0;
+    transition: all 0.3s ease-in-out;
+    width: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+
+  @include sp() {
+    flex-wrap: wrap;
+  }
+}
+
+/* totop */
+.totop {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  background: url(../../dist/img/general/totop.svg) no-repeat center center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

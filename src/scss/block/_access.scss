@@ -1,0 +1,99 @@
+/* access */
+
+.access {
+  padding: 130px 0;
+  position: relative;
+
+  @include sp() {
+    padding: 40px 0;
+  }
+
+  &-inner {
+
+    &.flex {
+      align-items: flex-start;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 72%;
+    height: 73%;
+    background-color: $c-main;
+    z-index: -1;
+
+    @include sp() {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-ttl {
+    margin-bottom: 39px;
+  }
+
+  &-txt {
+    @include fontsetting(16, 26, 0, false);
+    font-style: normal;
+    margin-bottom: 37px;
+
+    @include sp() {
+      margin-bottom: 19px;
+      @include fontsetting(12, 24);
+    }
+  }
+
+  &-content {
+    flex: 0 0 326px;
+    margin-right: 135px;
+
+    @include sp() {
+      flex-basis: 100%;
+    }
+  }
+
+  &-btn {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    &--pc {
+      @include sp() {
+        display: none;
+      }
+    }
+
+    &--sp {
+      display: none;
+
+      @include sp() {
+        display: block;
+      }
+    }
+  }
+}
+
+.map {
+  flex: 1 1 auto;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 43.5%; // TODO  height ÷ width × 100の割合にならない。perfect pixelで調整したが、計算が合わない
+
+  @include sp() {
+    margin-bottom: 40px;
+    padding-top: 70%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+  }
+}

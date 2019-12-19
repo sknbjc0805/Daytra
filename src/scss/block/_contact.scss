@@ -1,0 +1,316 @@
+/* contact */
+
+.contact {
+  padding: 80px 0;
+  background: url(../../dist/img/contact/bg01.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @media screen and (min-resolution: 2dppx) {
+    background: url(../../dist/img/contact/bg01@2x.png) no-repeat center center;
+  }
+
+
+  @include sp() {
+    padding: 40px 0;
+  }
+
+  &-head {
+    background: url(../../dist/img/contact/bg02.png) no-repeat center center;
+    background-size: cover;
+
+    @media screen and (min-resolution: 2dppx) {
+      background: url(../../dist/img/contact/bg02@2x.png) no-repeat center center;
+    }
+
+    width: 100%;
+    padding: 62px;
+    text-align: center;
+    border-radius: 12px 12px 0px 0px;
+
+    @include sp() {
+      padding: 32px 16px 36px;
+    }
+  }
+
+  &-ttl {
+    margin-bottom: 12px;
+
+    @include sp() {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-txt {
+    @include fontsetting(16, 21, 0, false);
+
+    @include sp() {
+      @include fontsetting(14, 26);
+      text-align: left;
+    }
+  }
+
+  &-body {
+    padding: 57px 90px 61px 90px;
+
+    @include sp() {
+      padding: 40px 16px;
+      @include fontsetting(16, 21);
+    }
+  }
+}
+
+//各フィールド共通設定
+.field {
+  margin-bottom: 38px;
+
+  &--local {
+    margin-bottom: 30px;
+
+    @include sp() {
+      margin-bottom: 20px;
+    }
+  }
+
+  //フィールド名
+  &-name {
+
+    @include fontsetting(22, 29);
+    @include fontweight(medium);
+
+    @include sp() {
+      @include fontsetting(16, 21);
+    }
+
+    &:not([for='message']) {
+      position: relative;
+      flex: 0 0 196px;
+      margin-right: 80px;
+
+      @include sp() {
+        flex: 1 1 100%;
+        margin: 0 0 10px 0;
+      }
+    }
+
+    &[for='message'] {
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    //必須マーク
+    &--required {
+      &::after {
+        content: "必須";
+        padding: 2px 12px;
+        background-color: $c-tertiary;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        color: $c-white;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        white-space: nowrap;
+
+        @include sp() {
+          position: static;
+          margin-left: 20px;
+          @include fontsetting(14, 18);
+        }
+      }
+    }
+  }
+}
+
+//テキスト
+.text {
+
+  &-item {
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1px solid $c-light;
+    @include fontsetting(22, 29);
+
+    @include sp() {
+      @include fontsetting(16, 21);
+    }
+  }
+}
+
+//セレクト
+.select {
+
+  &-wrap {
+    position: relative;
+    max-width: 261px;
+    width: 100%;
+
+    @include sp() {
+      max-width: none;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      transform: translateY(-50%) rotate(45deg);
+      content: '';
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-bottom: solid 2px $c-main;
+      border-right: solid 2px $c-main;
+      pointer-events: none;
+    }
+  }
+
+  &-item {
+    padding: 5px 20px;
+    border: 1px solid $c-light;
+    @include fontsetting(18, 23);
+    @include fontweight(medium);
+
+    @include sp() {
+      @include fontsetting(16, 21);
+    }
+  }
+}
+
+//テキストエリア
+.textarea {
+
+  &-item {
+    border: 1px solid $c-light;
+    height: 213px;
+    padding: 10px;
+
+    @include sp() {
+      height: 160px;
+    }
+  }
+}
+
+//ラジオボタン
+.radio {
+  &-item {
+    display: none;
+
+    &+span {
+      @include fontsetting(22, 29);
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 0 0 27px;
+      position: relative;
+
+      @include sp() {
+        @include fontsetting(16, 21);
+      }
+
+      &::before {
+        background: #fff;
+        border: 1px solid $c-light;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        background: $c-primary;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        content: "";
+        width: 6px;
+        height: 6px;
+        left: 3px;
+        opacity: 0;
+        padding: 2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:checked+span::after {
+      opacity: 1;
+    }
+  }
+
+  &-content {
+    &:not(:last-child) {
+      margin-right: 54px;
+    }
+  }
+}
+
+//チェックボックス
+
+.check {
+
+  &-item {
+    display: none;
+
+    &+span {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 0 0 41px;
+      @include fontsetting(18, 22.5);
+      position: relative;
+
+      @include sp() {
+        @include fontsetting(16, 21);
+      }
+
+      &::before {
+        background: $c-white;
+        border: 1px solid $c-light;
+        border-radius: 2px;
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        border-bottom: 3px solid $c-primary;
+        border-left: 3px solid $c-primary;
+        content: "";
+        display: block;
+        width: 16px;
+        height: 10px;
+        left: 2px;
+        margin-top: -0.2em;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+
+    &:checked+span::after {
+      opacity: 1;
+    }
+  }
+}
+
+.form {
+  &-btn {
+    max-width: 174px;
+    width: 100%;
+
+    @include sp() {
+      max-width: 121px;
+      margin: 0 auto;
+    }
+  }
+}
