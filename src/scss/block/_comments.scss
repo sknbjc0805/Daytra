@@ -79,6 +79,10 @@
 
   &:first-of-type {
     margin-bottom: 80px;
+
+    @include sp{
+      margin-bottom: 32px;
+    }
   }
 
   &-img {
