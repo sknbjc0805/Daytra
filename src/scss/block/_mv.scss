@@ -1,19 +1,20 @@
 .mv {
   padding: 218px 0 164px;
-  background-image: url(../../dist/img/mv/bg01.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url(../../dist/img/mv/bg01.png) no-repeat center center/cover;
 
-  @include sp() {
-    padding: 206px 0 167px;
-    background-position: 22% center;
-  }
-  
   @media screen and (min-resolution: 2dppx) {
     background-image: url(../../dist/img/mv/bg01@2x.png);
   }
 
+  @include sp() {
+    padding: 206px 0 167px;
+    background: url(../../dist/img/mv/bg01.png) no-repeat 22% center/cover;
+
+    @media screen and (min-resolution: 2dppx) {
+      background: url(../../dist/img/mv/bg01@2x.png) no-repeat 22% center/cover;
+    }
+  }
+  
   &-content {
     margin-left: auto;
     max-width: 540px;
