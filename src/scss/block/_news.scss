@@ -52,6 +52,22 @@
   @include fontsetting(18, 0, 0.45, false);
   border-top: 2px solid $c-border;
 
+  &::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    background: url(../../dist/img/news/arrow.svg) no-repeat center center;
+    background-size: 15px 25px;
+    width: 15px;
+    height: 25px;
+
+    @include sp() {
+      right: 15px;
+    }
+  }
+
   &:last-of-type {
     border-bottom: 2px solid $c-border;
   }
@@ -120,16 +136,4 @@
       @include fontsetting(14, 21.5, -0.35);
     }
   }
-
-  &-arrow {
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    transform: translateY(-50%);
-
-    @include sp() {
-      right: 10px;
-    }
-  }
-
 }
