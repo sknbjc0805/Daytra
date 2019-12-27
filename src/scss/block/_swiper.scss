@@ -1,8 +1,6 @@
 /* swiper */
 
 .swiper-container {
-  // TODO: z-index:1が初期値だが、ドロワーの上に重なってしまうため
-  //しかしdrawer-navのz-index:99999としている。。何故ここを0にする必要がある？
   z-index: 0;
 }
 
