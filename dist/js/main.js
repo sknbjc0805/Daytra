@@ -3,13 +3,11 @@ $(function () {
 
   /* ドロワー  */
   // ドロワーメニューの利用宣言 
-  $(document).ready(function () {
     $('.drawer').drawer();
 
     $('.drawer-menu-item').click(function(){
       $('.drawer').drawer('close');
     });
-  });
 
   /* アコーディオン  */
   $(".qa").on("click", function () {
@@ -103,11 +101,6 @@ $('.hmenu-item a, .drawer-menu-item').click(function(){
     'scrollTop' : position
   },500);
 });
-
-
-
-
-
 
 });
 
