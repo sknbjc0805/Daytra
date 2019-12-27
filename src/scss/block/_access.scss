@@ -77,15 +77,18 @@
 }
 
 .map {
+  &::before{
+    content: "";
+    display: block;
+    padding-top: 71.5%;
+    height: 0;
+  }
+
   flex: 1 1 auto;
   position: relative;
   width: 100%;
-  height: 0;
-  padding-top: 43.5%; // TODO  height ÷ width × 100の割合にならない。perfect pixelで調整したが、計算が合わない
-
   @include sp() {
     margin-bottom: 40px;
-    padding-top: 70%;
   }
 
   iframe {
