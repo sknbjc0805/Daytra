@@ -127,5 +127,11 @@
         @include fontsetting(14, 26, 0.35);
       }
     }
+
+    &:hover{
+      position: relative;
+      top: 1px;
+      left: 1px;
+    }
   }
 }
