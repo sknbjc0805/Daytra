@@ -71,12 +71,18 @@
     }
 
     &-icon {
-      font-size: 3rem;
-      color: $c-primary;
+      background: url(../../dist/img/faq/plus.svg) no-repeat center center;
+      background-size: 15px 15px;
+      width: 15px;
+      height: 15px;
       position: absolute;
-      top: 50%;
+      top: 40%;
       right: 0;
       transform: translateY(-50%);
+
+      &.open{
+        background: url(../../dist/img/faq/minus.svg) no-repeat center center;
+      }
     }
   }
 

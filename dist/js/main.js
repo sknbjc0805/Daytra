@@ -19,11 +19,9 @@ $(function () {
     $icon = $(this).find(".qa-q-icon");
 
     if ($icon.hasClass('open')) {
-      $icon.text('+');
       $icon.removeClass('open');
     } else {
       $icon.addClass('open');
-      $icon.text('-');
     }
   });
 
