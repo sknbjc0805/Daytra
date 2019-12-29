@@ -95,7 +95,7 @@ $('.hmenu-item a, .drawer-menu-item').click(function(){
   let id = $(this).attr('href');
 
   //該当idのセクションのスクロール位置を取得
-  let position = $(id).offset().top - 100;
+  let position = $(id).offset().top;
 
   $('html, body').animate({
     'scrollTop' : position
